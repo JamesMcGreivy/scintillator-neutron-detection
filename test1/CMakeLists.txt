@@ -39,8 +39,8 @@ add_executable(test1 test1.cc ${sources} ${headers})
 target_link_libraries(test1 ${Geant4_LIBRARIES})
 
 
-# Copy all scripts to the build directory, i.e. the directory in which we
-# build B1. This is so that we can run the executable directly because it
+# Copy all scripts to the build directory. 
+# This is so that we can run the executable directly because it
 # relies on these scripts being in the current working directory.
 
 # A list of all of the scripts which should go to the build directory.
