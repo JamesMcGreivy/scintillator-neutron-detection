@@ -11,6 +11,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/jamesmcgreivy/desktop/NSSC Research/test1/src/ActionInitialization.cc" "CMakeFiles/test1.dir/src/ActionInitialization.cc.o" "gcc" "CMakeFiles/test1.dir/src/ActionInitialization.cc.o.d"
   "/Users/jamesmcgreivy/desktop/NSSC Research/test1/src/DetectorConstruction.cc" "CMakeFiles/test1.dir/src/DetectorConstruction.cc.o" "gcc" "CMakeFiles/test1.dir/src/DetectorConstruction.cc.o.d"
   "/Users/jamesmcgreivy/desktop/NSSC Research/test1/src/PrimaryGeneratorAction.cc" "CMakeFiles/test1.dir/src/PrimaryGeneratorAction.cc.o" "gcc" "CMakeFiles/test1.dir/src/PrimaryGeneratorAction.cc.o.d"
+  "/Users/jamesmcgreivy/desktop/NSSC Research/test1/src/SensitiveDetector.cc" "CMakeFiles/test1.dir/src/SensitiveDetector.cc.o" "gcc" "CMakeFiles/test1.dir/src/SensitiveDetector.cc.o.d"
+  "/Users/jamesmcgreivy/desktop/NSSC Research/test1/src/myHit.cc" "CMakeFiles/test1.dir/src/myHit.cc.o" "gcc" "CMakeFiles/test1.dir/src/myHit.cc.o.d"
   "/Users/jamesmcgreivy/desktop/NSSC Research/test1/test1.cc" "CMakeFiles/test1.dir/test1.cc.o" "gcc" "CMakeFiles/test1.dir/test1.cc.o.d"
   )
 

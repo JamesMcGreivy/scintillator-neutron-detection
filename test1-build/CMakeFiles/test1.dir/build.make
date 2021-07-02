@@ -125,12 +125,42 @@ CMakeFiles/test1.dir/src/PrimaryGeneratorAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test1.dir/src/PrimaryGeneratorAction.cc.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jamesmcgreivy/desktop/NSSC Research/test1/src/PrimaryGeneratorAction.cc" -o CMakeFiles/test1.dir/src/PrimaryGeneratorAction.cc.s
 
+CMakeFiles/test1.dir/src/SensitiveDetector.cc.o: CMakeFiles/test1.dir/flags.make
+CMakeFiles/test1.dir/src/SensitiveDetector.cc.o: /Users/jamesmcgreivy/desktop/NSSC\ Research/test1/src/SensitiveDetector.cc
+CMakeFiles/test1.dir/src/SensitiveDetector.cc.o: CMakeFiles/test1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/test1-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test1.dir/src/SensitiveDetector.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test1.dir/src/SensitiveDetector.cc.o -MF CMakeFiles/test1.dir/src/SensitiveDetector.cc.o.d -o CMakeFiles/test1.dir/src/SensitiveDetector.cc.o -c "/Users/jamesmcgreivy/desktop/NSSC Research/test1/src/SensitiveDetector.cc"
+
+CMakeFiles/test1.dir/src/SensitiveDetector.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test1.dir/src/SensitiveDetector.cc.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/jamesmcgreivy/desktop/NSSC Research/test1/src/SensitiveDetector.cc" > CMakeFiles/test1.dir/src/SensitiveDetector.cc.i
+
+CMakeFiles/test1.dir/src/SensitiveDetector.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test1.dir/src/SensitiveDetector.cc.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jamesmcgreivy/desktop/NSSC Research/test1/src/SensitiveDetector.cc" -o CMakeFiles/test1.dir/src/SensitiveDetector.cc.s
+
+CMakeFiles/test1.dir/src/myHit.cc.o: CMakeFiles/test1.dir/flags.make
+CMakeFiles/test1.dir/src/myHit.cc.o: /Users/jamesmcgreivy/desktop/NSSC\ Research/test1/src/myHit.cc
+CMakeFiles/test1.dir/src/myHit.cc.o: CMakeFiles/test1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/test1-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test1.dir/src/myHit.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test1.dir/src/myHit.cc.o -MF CMakeFiles/test1.dir/src/myHit.cc.o.d -o CMakeFiles/test1.dir/src/myHit.cc.o -c "/Users/jamesmcgreivy/desktop/NSSC Research/test1/src/myHit.cc"
+
+CMakeFiles/test1.dir/src/myHit.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test1.dir/src/myHit.cc.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/jamesmcgreivy/desktop/NSSC Research/test1/src/myHit.cc" > CMakeFiles/test1.dir/src/myHit.cc.i
+
+CMakeFiles/test1.dir/src/myHit.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test1.dir/src/myHit.cc.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jamesmcgreivy/desktop/NSSC Research/test1/src/myHit.cc" -o CMakeFiles/test1.dir/src/myHit.cc.s
+
 # Object files for target test1
 test1_OBJECTS = \
 "CMakeFiles/test1.dir/test1.cc.o" \
 "CMakeFiles/test1.dir/src/ActionInitialization.cc.o" \
 "CMakeFiles/test1.dir/src/DetectorConstruction.cc.o" \
-"CMakeFiles/test1.dir/src/PrimaryGeneratorAction.cc.o"
+"CMakeFiles/test1.dir/src/PrimaryGeneratorAction.cc.o" \
+"CMakeFiles/test1.dir/src/SensitiveDetector.cc.o" \
+"CMakeFiles/test1.dir/src/myHit.cc.o"
 
 # External object files for target test1
 test1_EXTERNAL_OBJECTS =
@@ -139,6 +169,8 @@ test1: CMakeFiles/test1.dir/test1.cc.o
 test1: CMakeFiles/test1.dir/src/ActionInitialization.cc.o
 test1: CMakeFiles/test1.dir/src/DetectorConstruction.cc.o
 test1: CMakeFiles/test1.dir/src/PrimaryGeneratorAction.cc.o
+test1: CMakeFiles/test1.dir/src/SensitiveDetector.cc.o
+test1: CMakeFiles/test1.dir/src/myHit.cc.o
 test1: CMakeFiles/test1.dir/build.make
 test1: /Users/jamesmcgreivy/Geant4/geant4-install/lib/libG4Tree.dylib
 test1: /Users/jamesmcgreivy/Geant4/geant4-install/lib/libG4FR.dylib
@@ -196,7 +228,7 @@ test1: /Users/jamesmcgreivy/Geant4/geant4-install/lib/libG4global.dylib
 test1: /Users/jamesmcgreivy/Geant4/geant4-install/lib/libG4clhep.dylib
 test1: /Users/jamesmcgreivy/Geant4/geant4-install/lib/libG4ptl.0.0.2.dylib
 test1: CMakeFiles/test1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/test1-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable test1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/test1-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable test1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
