@@ -9,21 +9,26 @@
 # Draw geometry:
 /vis/drawVolume
 
-# Specify view angle:
-/vis/viewer/set/viewpointVector -1 0 0
-/vis/viewer/set/lightsVector -1 0 0
-
-# Specify style (surface, wireframe, auxiliary edges,...)
-/vis/viewer/set/style w
+# Sets all volumes as solids, and colors them accordingly
+/vis/viewer/set/style s
 /vis/viewer/set/auxiliaryEdge true
 /vis/viewer/set/lineSegmentsPerCircle 100
+/vis/geometry/set/colour ej309 1 0.2 0.4 0.6 0.6
+/vis/geometry/set/colour sleeve 1 0.5 0.5 0.5 0.2
+/vis/geometry/set/colour cap1 1 0.5 0.5 0.5 0.2
+/vis/geometry/set/colour cap2 1 0.5 0.5 0.5 0.2
+
 
 # Draw smooth trajectories at end of event, showing trajectory points
 # as markers 2 pixels wide:
-#/vis/scene/add/trajectories smooth
-#/vis/modeling/trajectories/create/drawByParticleID id
-#/vis/modeling/trajectories/id/default/setDrawStepPts true
-#/vis/modeling/trajectories/id/default/setStepPtsSize 2
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByParticleID id
+/vis/modeling/trajectories/id/default/setDrawStepPts true
+/vis/modeling/trajectories/id/default/setStepPtsSize 2
+/vis/modeling/trajectories/id/set e- yellow
+/vis/modeling/trajectories/id/set proton red
+/vis/modeling/trajectories/id/set neutron grey
+
 
 # To superimpose all of the events from a given run:
 /vis/scene/endOfEventAction accumulate
@@ -44,7 +49,7 @@
 /vis/set/lineWidth     # Revert to default line width (1.)
 
 # Make the "World" box invisible
-/vis/geometry/set/visibility World 0 false
+/vis/geometry/set/visibility world 0 false
 
 # Re-establish auto refreshing and verbosity:
 /vis/viewer/set/autoRefresh true

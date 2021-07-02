@@ -1,3 +1,4 @@
+
 // Author -- James McGreivy
 // Date -- Jun 26th 2021
 
@@ -15,6 +16,8 @@
 #include "G4LogicalVolume.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4PVPlacement.hh"
+#include "G4SDManager.hh"
+#include "SensitiveDetector.hh"
 
 // Constructor, just calls parent constructor
 DetectorConstruction::DetectorConstruction() 
@@ -55,65 +58,62 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 
 
   // ~~ Puts a uranium box in the world ~~ //
-  G4Material* uranium = nist->FindOrBuildMaterial("G4_URANIUM_OXIDE");
+  G4Material* detectorMat = nist->FindOrBuildMaterial("G4_GLASS_PLATE");
 
-  // Defines the material tungsten
-  G4Material* tungsten = nist->FindOrBuildMaterial("G4_C");
+  // Defines the material of the walls
+  G4Material* wallMat = nist->FindOrBuildMaterial("G4_BENZENE");
 
-  G4Box* firstWall = 
-    new G4Box("first", 60*cm, 60*cm, 4*cm);
+  G4Box* wall = 
+    new G4Box("wall_solid", 60*cm, 60*cm, 10*cm);
 
-  G4LogicalVolume* logicFirstWall =
-    new G4LogicalVolume(firstWall, tungsten, "first");
+  G4LogicalVolume* logicWall =
+    new G4LogicalVolume(wall, wallMat, "wall_lv");
 
   G4VPhysicalVolume* physFirstWall =
     new G4PVPlacement(0,                  // rotation
-                      G4ThreeVector(0*cm, 0*cm, -60*cm), // at (0,0,30cm)
-                      logicFirstWall,         // logical volume
-                      "first",      // name
+                      G4ThreeVector(0*cm, 0*cm, 0*cm), // at (0,0,0)
+                      logicWall,         // logical volume
+                      "wall_pv",      // name
                       logicWorld,         // mother
                       false,              // ?, just make false
                       0,                  // copy number
                       checkOverlaps);     // overlaps checking
 
-  
-  
+  G4Box* detector =
+    new G4Box("detector_solid", 60*cm, 60*cm, 0.5*cm);
 
-  // ~~ Puts a tungsten reflector in the backside of the uranium box ~~ //
-  G4Box* secondWall =
-    new G4Box("second", 60*cm, 60*cm, 4*cm);
+  G4LogicalVolume* logicDetector =
+    new G4LogicalVolume(detector, detectorMat, "detector_lv");
 
-  G4LogicalVolume* logicSecondWall =
-    new G4LogicalVolume(secondWall, tungsten, "second");
-
-  G4VPhysicalVolume* physSecondWall =
+  G4VPhysicalVolume* physDeteector =
     new G4PVPlacement(0,
-                      G4ThreeVector(0, 0, 0*cm),
-                      logicSecondWall,         // logical volume
-                      "second",      // name
-                      logicWorld,         // mother
-                      false,              // ?, just make false
-                      0,                  // copy number
-                      checkOverlaps);     // overlaps checking
-
-  // ~~ Puts a tungsten reflector in the bottom side of the uranium box ~~ //
-  G4Box* thirdWall =
-    new G4Box("third", 60*cm, 60*cm, 4*cm);
-
-  G4LogicalVolume* logicThirdWall =
-    new G4LogicalVolume(thirdWall, tungsten, "third");
-
-  G4VPhysicalVolume* physThirdWall =
-    new G4PVPlacement(0,
-                      G4ThreeVector(0, 0, 60*cm),
-                      logicThirdWall,         // logical volume
-                      "third",      // name
-                      logicWorld,         // mother
-                      false,              // ?, just make false
-                      0,                  // copy number
-                      checkOverlaps);     // overlaps checking
+                      G4ThreeVector(0*cm, 0*cm, 10.5*cm),
+                      logicDetector,
+                      "detector_pv",
+                      logicWorld,
+                      false,
+                      0,
+                      checkOverlaps);
 
   // Returns the physical world
   return world;
 
 }
+
+
+void DetectorConstruction::ConstructSDandField()
+{
+
+  SensitiveDetector* sensitiveBox = new SensitiveDetector("detector_sd");
+    
+  G4SDManager* SDManager = G4SDManager::GetSDMpointer();
+  SDManager->AddNewDetector(sensitiveBox);
+    
+  SetSensitiveDetector("detector_lv", sensitiveBox, true);
+
+}
+
+
+
+
+
