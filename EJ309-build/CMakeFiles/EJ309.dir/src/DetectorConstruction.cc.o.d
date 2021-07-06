@@ -401,4 +401,6 @@ CMakeFiles/EJ309.dir/src/DetectorConstruction.cc.o: \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4HCtable.hh \
   /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/include/SensitiveDetector.hh \
   /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/include/myHit.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4THitsCollection.hh
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4THitsCollection.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UserLimits.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UserLimits.icc

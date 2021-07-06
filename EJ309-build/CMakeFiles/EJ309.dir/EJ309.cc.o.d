@@ -620,4 +620,15 @@ CMakeFiles/EJ309.dir/EJ309.cc.o: \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ScoringManager.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VScoringMesh.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4StatDouble.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VScoreWriter.hh
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VScoreWriter.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SDManager.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SDStructure.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VSensitiveDetector.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VReadOutGeometry.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SensitiveVolumeList.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4CollectionNameVector.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VSDFilter.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4HCtable.hh \
+  /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/include/SensitiveDetector.hh \
+  /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/include/myHit.hh \
+  /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/include/HitsCollection.hh
