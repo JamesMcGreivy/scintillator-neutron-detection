@@ -18,6 +18,9 @@
 #include "SensitiveDetector.hh"
 #include "G4Element.hh"
 #include "G4Material.hh"
+#include "G4UserLimits.hh"
+#include "myHit.hh"
+
 
 DetectorConstruction::DetectorConstruction() 
   : G4VUserDetectorConstruction() 
@@ -105,6 +108,9 @@ G4VPhysicalVolume* DetectorConstruction::DefineGeometry()
                       1,
                       checkOverlaps);
 
+  G4UserLimits* stepLimit = new G4UserLimits(DBL_MAX, DBL_MAX, DBL_MAX, 0.0, 0.0);
+  logicEJ309->SetUserLimits(stepLimit);
+
   // ~~ Defines an aluminum sleeve surrounding the scintillator ~~ //
 
   G4Tubs* solidAlSleeve
@@ -173,6 +179,12 @@ G4VPhysicalVolume* DetectorConstruction::DefineGeometry()
 // Constructs all sensitive detectors and assigns them to a logical volume
 void DetectorConstruction::ConstructSDandField()
 {
+
+  SensitiveDetector* ej309SD = new SensitiveDetector("ej309");
+
+  G4SDManager::GetSDMpointer()->AddNewDetector(ej309SD);
+  
+  SetSensitiveDetector("ej309", ej309SD);
 
 }
 

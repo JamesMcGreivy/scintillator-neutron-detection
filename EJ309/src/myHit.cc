@@ -7,11 +7,25 @@
 #include "G4VHit.hh"
 #include "G4THitsCollection.hh"
 #include "G4Allocator.hh"
+#include "SystemOfUnits.hh"
 
-void myHit::Draw() {
-
+myHit::myHit(G4int trackID, G4double eDep, G4String particle)
+{
+	hTrackID = trackID;
+	hEdep = eDep;
+	hParticle = particle;
+	hEventNum = -1;
 }
 
-void myHit::Print() {
+myHit::~myHit()
+{
+	delete hParticle;
+}
 
+G4String myHit::ToString() {
+	G4String str = std::to_string(hEventNum) + "," 
+				 + std::to_string(hTrackID)  + "," 
+				 + std::to_string(hEdep / eV)	 + ","
+				 + hParticle;
+	return str;
 }

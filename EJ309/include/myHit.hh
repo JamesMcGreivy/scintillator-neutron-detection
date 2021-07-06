@@ -10,33 +10,31 @@
 #include "G4THitsCollection.hh"
 #include "G4Allocator.hh"
 #include "G4ThreeVector.hh"
+#include "G4THitsCollection.hh"
 
 
 class myHit : public G4VHit
 {
 public:
-    // methods from base class
-    virtual void Draw();
-    virtual void Print();
+  // constructor
+  myHit (G4int trackID, G4double eDep, G4String particle);
+  ~myHit();
+  
+  // methods from base class
+  G4String ToString();
 
-    // Set methods
-    void SetTrackID  (G4int track)      { fTrackID = track; };
-    void SetChamberNb(G4int chamb)      { fChamberNb = chamb; };
-    void SetEdep     (G4double de)      { fEdep = de; };
-    void SetPos      (G4ThreeVector xyz){ fPos = xyz; };
+  // Set methods
+  void SetEventNum(G4int eventNum) { hEventNum = eventNum; };
 
-    // Get methods
-    G4int GetTrackID() const     { return fTrackID; };
-    G4int GetChamberNb() const   { return fChamberNb; };
-    G4double GetEdep() const     { return fEdep; };
-    G4ThreeVector GetPos() const { return fPos; };
+  // Get methods
+  G4int GetTrackID() const     { return hTrackID; };
+  G4double GetEdep() const     { return hEdep; };
 
   private:
-      G4int         fTrackID;
-      G4int         fChamberNb;
-      G4double      fEdep;
-      G4ThreeVector fPos;
+      G4int hEventNum;
+      G4int hTrackID;
+      G4double hEdep;
+      G4String hParticle;
 };
-
 
 #endif

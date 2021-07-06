@@ -16,29 +16,19 @@
 
 PrimaryGeneratorAction::PrimaryGeneratorAction()
 : G4VUserPrimaryGeneratorAction(),
-  fParticleGun(0)
+  fParticleSource(0)
 {
-  G4int n_particle = 1;
-  fParticleGun = new G4ParticleGun(n_particle);
-
-  // particle kinematic
-  G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
-  G4String particleName;
-  G4ParticleDefinition* particle
-    = particleTable->FindParticle(particleName="gamma");
-  fParticleGun->SetParticleDefinition(particle);
-  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.0, 0.0, 1.0));
-  fParticleGun->SetParticleEnergy(662*keV);
+  fParticleSource = new G4GeneralParticleSource();
 }
 
 PrimaryGeneratorAction::~PrimaryGeneratorAction()
 {
-  delete fParticleGun;
+  delete fParticleSource;
 }
 
 void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
   // This gets called at the beginning of each event
-  fParticleGun->SetParticlePosition(G4ThreeVector(0*inch, 0*inch, -5.0*inch));
-  fParticleGun->GeneratePrimaryVertex(anEvent);
+  fParticleSource->SetParticlePosition(G4ThreeVector(0*inch, 0*inch, -5.0*inch));
+  fParticleSource->GeneratePrimaryVertex(anEvent);
 } 

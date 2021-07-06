@@ -3142,7 +3142,10 @@ CMakeFiles/EJ309.dir/src/myHit.cc.o: /Users/jamesmcgreivy/desktop/NSSC\ Research
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ThreeVector.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Vector/ThreeVector.h \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Utility/defs.h \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Vector/ThreeVector.icc
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Vector/ThreeVector.icc \
+  /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/include/SystemOfUnits.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SystemOfUnits.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
 
 
 /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/src/SensitiveDetector.cc:

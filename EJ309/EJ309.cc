@@ -13,6 +13,10 @@
 #include "G4UIExecutive.hh"
 #include "G4ScoringManager.hh"
 #include "G4VModularPhysicsList.hh"
+#include "G4SDManager.hh"
+#include "SensitiveDetector.hh"
+#include "myHit.hh"
+#include "HitsCollection.hh"
 
 int main(int argc, char** argv) 
 {
@@ -22,9 +26,6 @@ int main(int argc, char** argv)
 
 	// Constructs the run manager (this should be multithreaded?)
 	auto* runManager = G4RunManagerFactory::CreateRunManager(G4RunManagerType::Default);
-
-	// Scoring Manager
-	G4ScoringManager* sm = G4ScoringManager::GetScoringManager();
 
 	// ~~ Provides the mandatory initialization classes ~~ //
 	
@@ -37,6 +38,7 @@ int main(int argc, char** argv)
 	// User action initialization :
 	runManager->SetUserInitialization(new ActionInitialization());
 
+
 	// ~~ Initializes the visualization ~~ //
 
 	G4VisManager* visManager = new G4VisExecutive();
@@ -46,15 +48,40 @@ int main(int argc, char** argv)
 	G4UImanager* UImanager = G4UImanager::GetUIpointer();
 
 	// Starts the interactive session
-	UImanager->ApplyCommand("/control/execute init_vis.mac");
-	ui->SessionStart();
-	
+	//UImanager->ApplyCommand("/run/initialize");
+	//UImanager->ApplyCommand("/control/execute vis.mac");
+	//ui->SessionStart();
 
-	// Deletes everything : )
-	delete ui;
-	delete visManager;
+	// Initializes the Run
+	UImanager->ApplyCommand("/cuts/setLowEdge 1 eV");
+	UImanager->ApplyCommand("/cuts/setHighEdge 10 TeV");
+	runManager->Initialize();
+
+	// Sets up the Particle Source
+	UImanager->ApplyCommand("/gps/ang/type iso");
+	UImanager->ApplyCommand("/gps/position 0 0 -10 cm");
+	UImanager->ApplyCommand("/gps/ang/mintheta 160 deg");
+	UImanager->ApplyCommand("/gps/ang/mintheta 200 deg");
+	UImanager->ApplyCommand("/gps/ene/type Mono");
+	UImanager->ApplyCommand("/gps/number 1000000");
+
+	// Changes the gun to Gamma
+	UImanager->ApplyCommand("/gps/particle gamma");
+	UImanager->ApplyCommand("/gps/energy 662 keV");
+
+	// Runs the first simulation (Gammas)
+	runManager->BeamOn(1);
+
+	// Changes the gun to Neutrons
+	HitsCollection::EndEvent();
+	UImanager->ApplyCommand("/gps/particle neutron");
+	UImanager->ApplyCommand("/gps/energy 2 MeV");
+
+	// Runs the second simulation (Neutrons)
+	runManager->BeamOn(1);
+
+	HitsCollection::ToFile("EnergyDeposited.csv");
+
 	delete runManager;
-
-
 	return 0;
 }
