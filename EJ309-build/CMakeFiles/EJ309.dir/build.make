@@ -111,10 +111,24 @@ CMakeFiles/EJ309.dir/src/DetectorConstruction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EJ309.dir/src/DetectorConstruction.cc.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jamesmcgreivy/desktop/NSSC Research/EJ309/src/DetectorConstruction.cc" -o CMakeFiles/EJ309.dir/src/DetectorConstruction.cc.s
 
+CMakeFiles/EJ309.dir/src/HitsCollection.cc.o: CMakeFiles/EJ309.dir/flags.make
+CMakeFiles/EJ309.dir/src/HitsCollection.cc.o: /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/src/HitsCollection.cc
+CMakeFiles/EJ309.dir/src/HitsCollection.cc.o: CMakeFiles/EJ309.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/EJ309-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/EJ309.dir/src/HitsCollection.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EJ309.dir/src/HitsCollection.cc.o -MF CMakeFiles/EJ309.dir/src/HitsCollection.cc.o.d -o CMakeFiles/EJ309.dir/src/HitsCollection.cc.o -c "/Users/jamesmcgreivy/desktop/NSSC Research/EJ309/src/HitsCollection.cc"
+
+CMakeFiles/EJ309.dir/src/HitsCollection.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EJ309.dir/src/HitsCollection.cc.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/jamesmcgreivy/desktop/NSSC Research/EJ309/src/HitsCollection.cc" > CMakeFiles/EJ309.dir/src/HitsCollection.cc.i
+
+CMakeFiles/EJ309.dir/src/HitsCollection.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EJ309.dir/src/HitsCollection.cc.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/jamesmcgreivy/desktop/NSSC Research/EJ309/src/HitsCollection.cc" -o CMakeFiles/EJ309.dir/src/HitsCollection.cc.s
+
 CMakeFiles/EJ309.dir/src/PhysicsList.cc.o: CMakeFiles/EJ309.dir/flags.make
 CMakeFiles/EJ309.dir/src/PhysicsList.cc.o: /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/src/PhysicsList.cc
 CMakeFiles/EJ309.dir/src/PhysicsList.cc.o: CMakeFiles/EJ309.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/EJ309-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/EJ309.dir/src/PhysicsList.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/EJ309-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/EJ309.dir/src/PhysicsList.cc.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EJ309.dir/src/PhysicsList.cc.o -MF CMakeFiles/EJ309.dir/src/PhysicsList.cc.o.d -o CMakeFiles/EJ309.dir/src/PhysicsList.cc.o -c "/Users/jamesmcgreivy/desktop/NSSC Research/EJ309/src/PhysicsList.cc"
 
 CMakeFiles/EJ309.dir/src/PhysicsList.cc.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/EJ309.dir/src/PhysicsList.cc.s: cmake_force
 CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o: CMakeFiles/EJ309.dir/flags.make
 CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o: /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/src/PrimaryGeneratorAction.cc
 CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o: CMakeFiles/EJ309.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/EJ309-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/EJ309-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o -MF CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o.d -o CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o -c "/Users/jamesmcgreivy/desktop/NSSC Research/EJ309/src/PrimaryGeneratorAction.cc"
 
 CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.s: cmake_force
 CMakeFiles/EJ309.dir/src/SensitiveDetector.cc.o: CMakeFiles/EJ309.dir/flags.make
 CMakeFiles/EJ309.dir/src/SensitiveDetector.cc.o: /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/src/SensitiveDetector.cc
 CMakeFiles/EJ309.dir/src/SensitiveDetector.cc.o: CMakeFiles/EJ309.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/EJ309-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/EJ309.dir/src/SensitiveDetector.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/EJ309-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/EJ309.dir/src/SensitiveDetector.cc.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EJ309.dir/src/SensitiveDetector.cc.o -MF CMakeFiles/EJ309.dir/src/SensitiveDetector.cc.o.d -o CMakeFiles/EJ309.dir/src/SensitiveDetector.cc.o -c "/Users/jamesmcgreivy/desktop/NSSC Research/EJ309/src/SensitiveDetector.cc"
 
 CMakeFiles/EJ309.dir/src/SensitiveDetector.cc.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/EJ309.dir/src/SensitiveDetector.cc.s: cmake_force
 CMakeFiles/EJ309.dir/src/myHit.cc.o: CMakeFiles/EJ309.dir/flags.make
 CMakeFiles/EJ309.dir/src/myHit.cc.o: /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/src/myHit.cc
 CMakeFiles/EJ309.dir/src/myHit.cc.o: CMakeFiles/EJ309.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/EJ309-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/EJ309.dir/src/myHit.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/EJ309-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/EJ309.dir/src/myHit.cc.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EJ309.dir/src/myHit.cc.o -MF CMakeFiles/EJ309.dir/src/myHit.cc.o.d -o CMakeFiles/EJ309.dir/src/myHit.cc.o -c "/Users/jamesmcgreivy/desktop/NSSC Research/EJ309/src/myHit.cc"
 
 CMakeFiles/EJ309.dir/src/myHit.cc.i: cmake_force
@@ -172,6 +186,7 @@ EJ309_OBJECTS = \
 "CMakeFiles/EJ309.dir/EJ309.cc.o" \
 "CMakeFiles/EJ309.dir/src/ActionInitialization.cc.o" \
 "CMakeFiles/EJ309.dir/src/DetectorConstruction.cc.o" \
+"CMakeFiles/EJ309.dir/src/HitsCollection.cc.o" \
 "CMakeFiles/EJ309.dir/src/PhysicsList.cc.o" \
 "CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o" \
 "CMakeFiles/EJ309.dir/src/SensitiveDetector.cc.o" \
@@ -183,6 +198,7 @@ EJ309_EXTERNAL_OBJECTS =
 EJ309: CMakeFiles/EJ309.dir/EJ309.cc.o
 EJ309: CMakeFiles/EJ309.dir/src/ActionInitialization.cc.o
 EJ309: CMakeFiles/EJ309.dir/src/DetectorConstruction.cc.o
+EJ309: CMakeFiles/EJ309.dir/src/HitsCollection.cc.o
 EJ309: CMakeFiles/EJ309.dir/src/PhysicsList.cc.o
 EJ309: CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o
 EJ309: CMakeFiles/EJ309.dir/src/SensitiveDetector.cc.o
@@ -244,7 +260,7 @@ EJ309: /Users/jamesmcgreivy/Geant4/geant4-install/lib/libG4global.dylib
 EJ309: /Users/jamesmcgreivy/Geant4/geant4-install/lib/libG4clhep.dylib
 EJ309: /Users/jamesmcgreivy/Geant4/geant4-install/lib/libG4ptl.0.0.2.dylib
 EJ309: CMakeFiles/EJ309.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/EJ309-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable EJ309"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/jamesmcgreivy/desktop/NSSC Research/EJ309-build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable EJ309"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/EJ309.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

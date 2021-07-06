@@ -374,4 +374,7 @@ CMakeFiles/EJ309.dir/src/SensitiveDetector.cc.o: \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4THitsCollection.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SDManager.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SDStructure.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4HCtable.hh
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4HCtable.hh \
+  /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/include/SystemOfUnits.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SystemOfUnits.hh \
+  /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/include/HitsCollection.hh

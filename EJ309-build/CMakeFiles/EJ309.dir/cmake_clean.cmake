@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/EJ309.dir/src/ActionInitialization.cc.o.d"
   "CMakeFiles/EJ309.dir/src/DetectorConstruction.cc.o"
   "CMakeFiles/EJ309.dir/src/DetectorConstruction.cc.o.d"
+  "CMakeFiles/EJ309.dir/src/HitsCollection.cc.o"
+  "CMakeFiles/EJ309.dir/src/HitsCollection.cc.o.d"
   "CMakeFiles/EJ309.dir/src/PhysicsList.cc.o"
   "CMakeFiles/EJ309.dir/src/PhysicsList.cc.o.d"
   "CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o"

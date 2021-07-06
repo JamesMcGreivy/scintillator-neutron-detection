@@ -246,6 +246,30 @@ src/DetectorConstruction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EJ309.dir/build.make CMakeFiles/EJ309.dir/src/DetectorConstruction.cc.s
 .PHONY : src/DetectorConstruction.cc.s
 
+src/HitsCollection.o: src/HitsCollection.cc.o
+.PHONY : src/HitsCollection.o
+
+# target to build an object file
+src/HitsCollection.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EJ309.dir/build.make CMakeFiles/EJ309.dir/src/HitsCollection.cc.o
+.PHONY : src/HitsCollection.cc.o
+
+src/HitsCollection.i: src/HitsCollection.cc.i
+.PHONY : src/HitsCollection.i
+
+# target to preprocess a source file
+src/HitsCollection.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EJ309.dir/build.make CMakeFiles/EJ309.dir/src/HitsCollection.cc.i
+.PHONY : src/HitsCollection.cc.i
+
+src/HitsCollection.s: src/HitsCollection.cc.s
+.PHONY : src/HitsCollection.s
+
+# target to generate assembly for a file
+src/HitsCollection.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EJ309.dir/build.make CMakeFiles/EJ309.dir/src/HitsCollection.cc.s
+.PHONY : src/HitsCollection.cc.s
+
 src/PhysicsList.o: src/PhysicsList.cc.o
 .PHONY : src/PhysicsList.o
 
@@ -364,6 +388,9 @@ help:
 	@echo "... src/DetectorConstruction.o"
 	@echo "... src/DetectorConstruction.i"
 	@echo "... src/DetectorConstruction.s"
+	@echo "... src/HitsCollection.o"
+	@echo "... src/HitsCollection.i"
+	@echo "... src/HitsCollection.s"
 	@echo "... src/PhysicsList.o"
 	@echo "... src/PhysicsList.i"
 	@echo "... src/PhysicsList.s"

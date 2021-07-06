@@ -2,7 +2,7 @@ CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o: \
   /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/src/PrimaryGeneratorAction.cc \
   /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/include/PrimaryGeneratorAction.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ParticleGun.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GeneralParticleSource.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/globals.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ios.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Types.hh \
@@ -247,37 +247,50 @@ CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o: \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__tree \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__node_handle \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/optional \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VPrimaryGenerator.hh \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/vector \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__split_buffer \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Event.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/evtdefs.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Allocator.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4AllocatorPool.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PrimaryVertex.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/pwdefs.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ThreeVector.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Vector/ThreeVector.h \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Utility/defs.h \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Vector/ThreeVector.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PrimaryParticle.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4HCofThisEvent.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VHitsCollection.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4DCofThisEvent.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VDigiCollection.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4TrajectoryContainer.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VTrajectory.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VUserEventInformation.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Profiler.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Profiler.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/PTL/Globals.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/PTL/Types.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/PTL/Utility.hh \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/set \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/array \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SingleParticleSource.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VPrimaryGenerator.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ParticleMomentum.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ParticleDefinition.hh \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/vector \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__split_buffer \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Units/PhysicalConstants.h \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PDefManager.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/pwdefs.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4AutoLock.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Threading.hh \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/condition_variable \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/future \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/thread \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ParticleDefinition.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PrimaryVertex.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Allocator.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4AllocatorPool.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PrimaryParticle.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ParticleMomentum.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4LogicalVolumeStore.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4LogicalVolume.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Region.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GeomSplitter.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/geomwdefs.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Region.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VPhysicalVolume.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SPSPosDistribution.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Navigator.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/geomdefs.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4AffineTransform.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4RotationMatrix.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Vector/Rotation.h \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationInterfaces.h \
@@ -293,48 +306,105 @@ CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o: \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationZ.h \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Vector/RotationZ.icc \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Vector/Rotation.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Transform3D.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Geometry/Transform3D.h \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Geometry/Transform3D.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Geometry/Point3D.h \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Geometry/Vector3D.h \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Geometry/Normal3D.h \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4AffineTransform.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4LogicalVolume.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Region.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GeomSplitter.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/geomwdefs.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Region.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VPhysicalVolume.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VPhysicalVolume.icc \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4LogicalVolume.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GRSVolume.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VTouchable.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VTouchable.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GRSVolume.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GRSSolid.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GRSSolid.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4TouchableHandle.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ReferenceCountedHandle.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4TouchableHistoryHandle.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4TouchableHistory.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationHistory.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationLevel.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationLevelRep.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationLevelRep.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationLevel.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationHistoryPool.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationHistory.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4TouchableHistory.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NormalNavigation.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VSolid.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VSolid.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4AuxiliaryNavServices.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4AuxiliaryNavServices.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NormalNavigation.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VoxelNavigation.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationLogger.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4BlockingList.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4BlockingList.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SmartVoxelProxy.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SmartVoxelProxy.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SmartVoxelNode.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SmartVoxelNode.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SmartVoxelHeader.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SmartVoxelHeader.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VoxelNavigation.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ParameterisedNavigation.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VPVParameterisation.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VVolumeMaterialScanner.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ParameterisedNavigation.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ReplicaNavigation.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ReplicaNavigation.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4RegularNavigation.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VExternalNavigation.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Navigator.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SPSRandomGenerator.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PhysicsOrderedFreeVector.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PhysicsVector.hh \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/fstream \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/filesystem \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/stack \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/deque \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Log.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PhysicsVectorType.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PhysicsVector.icc \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4DataInterpolation.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Cache.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4CacheDetails.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SPSAngDistribution.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SPSEneDistribution.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GeneralParticleSourceMessenger.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UImessenger.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UIdirectory.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UIcommand.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UIparameter.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UItokenNum.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ApplicationState.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GeneralParticleSourceData.hh \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4LogicalVolumeStore.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VStoreNotifier.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VNotifier.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Box.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GeomTypes.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GeomConfig.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4CSGSolid.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VSolid.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VSolid.icc \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Polyhedron.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/HepPolyhedron.h \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Point3D.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Geometry/Point3D.h \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Normal3D.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Geometry/Normal3D.h \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Transform3D.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Geometry/Transform3D.h \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Geometry/Transform3D.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Geometry/Vector3D.h \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Visible.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Visible.icc \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Box.icc \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4RunManager.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/rundefs.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Event.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/evtdefs.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4HCofThisEvent.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VHitsCollection.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4DCofThisEvent.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VDigiCollection.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4TrajectoryContainer.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VTrajectory.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VUserEventInformation.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Profiler.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Profiler.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/PTL/Globals.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/PTL/Types.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/PTL/Utility.hh \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/set \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/array \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4EventManager.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4StackManager.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UserStackingAction.hh \
@@ -346,14 +416,9 @@ CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o: \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/trkdefs.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4DynamicParticle.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4LorentzVector.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Log.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ElectronOccupancy.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4DynamicParticle.icc \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4TrackStatus.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4TouchableHandle.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VTouchable.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VTouchable.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ReferenceCountedHandle.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VUserTrackInformation.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PhysicsModelCatalog.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Material.hh \
@@ -365,14 +430,6 @@ CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o: \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4MaterialPropertiesTable.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4MaterialPropertiesIndex.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4MaterialPropertyVector.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PhysicsOrderedFreeVector.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PhysicsVector.hh \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/fstream \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/filesystem \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/stack \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/deque \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PhysicsVectorType.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PhysicsVector.icc \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4MaterialPropertiesTable.icc \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4IonisParamMat.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Exp.hh \
@@ -442,47 +499,6 @@ CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o: \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Random/RandPoissonQ.icc \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Random/RandStudentT.h \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/CLHEP/Random/RandStudentT.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Navigator.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4AffineTransform.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4AffineTransform.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GRSVolume.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GRSVolume.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GRSSolid.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4GRSSolid.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4TouchableHistoryHandle.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4TouchableHistory.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationHistory.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationLevel.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationLevelRep.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationLevelRep.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationLevel.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationHistoryPool.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationHistory.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4TouchableHistory.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NormalNavigation.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4AuxiliaryNavServices.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4AuxiliaryNavServices.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NormalNavigation.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VoxelNavigation.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4NavigationLogger.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4BlockingList.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4BlockingList.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SmartVoxelProxy.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SmartVoxelProxy.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SmartVoxelNode.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SmartVoxelNode.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SmartVoxelHeader.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SmartVoxelHeader.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VoxelNavigation.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ParameterisedNavigation.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VPVParameterisation.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VVolumeMaterialScanner.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ParameterisedNavigation.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ReplicaNavigation.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ReplicaNavigation.icc \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4RegularNavigation.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VExternalNavigation.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4Navigator.icc \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ProcessManager.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VProcess.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4PhysicsTable.hh \
@@ -502,14 +518,9 @@ CMakeFiles/EJ309.dir/src/PrimaryGeneratorAction.cc.o: \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UserSteppingAction.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4VSteppingVerbose.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4TrackingMessenger.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UImessenger.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UIdirectory.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UIcommand.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UIparameter.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UItokenNum.hh \
-  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ApplicationState.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4UserTrackingAction.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4RunManagerKernel.hh \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/list \
+  /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4ParticleGun.hh \
   /Users/jamesmcgreivy/desktop/NSSC\ Research/EJ309/include/SystemOfUnits.hh \
   /Users/jamesmcgreivy/Geant4/geant4-install/include/Geant4/G4SystemOfUnits.hh
