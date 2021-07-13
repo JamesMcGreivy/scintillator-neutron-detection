@@ -4,22 +4,23 @@
 #include "HitsCollection.hh"
 #include <fstream>
 
-
-G4int HitsCollection::eventNumber = 0;
 std::vector<myHit*> HitsCollection::allHits = std::vector<myHit*>();
 std::mutex HitsCollection::mtx;
 
 void HitsCollection::AddHit(myHit* hit)
 {
-	hit->SetEventNum(GetEventNumber());
 	HitsCollection::mtx.lock();
 	allHits.push_back(hit);
 	HitsCollection::mtx.unlock();
 }
 
-void HitsCollection::EndEvent()
+void HitsCollection::Clear()
 {
-	eventNumber ++;
+	HitsCollection::mtx.lock();
+	for (myHit* hit : HitsCollection::allHits)
+		delete hit;
+	allHits.clear();
+	HitsCollection::mtx.unlock();
 }
 
 void HitsCollection::ToFile(G4String path)
@@ -27,6 +28,8 @@ void HitsCollection::ToFile(G4String path)
 
 	std::ofstream file;
 	file.open(path);
+
+	file << "trackID,parentID,pType,eDep(eV),materialName,currKE(eV),currTime\n";
 
 	for (myHit* hit : HitsCollection::allHits)
 	{

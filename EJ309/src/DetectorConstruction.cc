@@ -116,7 +116,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineGeometry()
   G4Tubs* solidAlSleeve
     = new G4Tubs("sleeve",    // Name
                  1.0*inch,    // Inner Radius 
-                 1.2*inch,    // Outer Radius
+                 1.05*inch,    // Outer Radius
                  1.0*inch,    // Half-Height
                  0.0*deg,     // Starting Angle
                  360.0*deg);  // Spanning Angle
@@ -139,8 +139,8 @@ G4VPhysicalVolume* DetectorConstruction::DefineGeometry()
   G4Tubs* solidAlCap
     = new G4Tubs("cap",    // Name
                  0.0*inch,    // Inner Radius 
-                 1.2*inch,    // Outer Radius
-                 0.1*inch,    // Half-Height
+                 1.05*inch,    // Outer Radius
+                 0.025*inch,    // Half-Height
                  0.0*deg,     // Starting Angle
                  360.0*deg);  // Spanning Angle
 
@@ -149,7 +149,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineGeometry()
 
   G4VPhysicalVolume* physAlCap1 =
     new G4PVPlacement(0,
-                      G4ThreeVector(0, 0, -1.1*inch),
+                      G4ThreeVector(0, 0, -1.025*inch),
                       logicAlCap1,
                       "cap1",
                       logicWorld,
@@ -162,7 +162,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineGeometry()
 
   G4VPhysicalVolume* physAlCap2 =
     new G4PVPlacement(0,
-                      G4ThreeVector(0, 0, 1.1*inch),
+                      G4ThreeVector(0, 0, 1.025*inch),
                       logicAlCap2,
                       "cap2",
                       logicWorld,
@@ -170,6 +170,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineGeometry()
                       2,
                       checkOverlaps);
 
+  
   // Returns the world
   return physWorld;
 
@@ -185,6 +186,15 @@ void DetectorConstruction::ConstructSDandField()
   G4SDManager::GetSDMpointer()->AddNewDetector(ej309SD);
   
   SetSensitiveDetector("ej309", ej309SD);
+/*
+  SensitiveDetector* alSD = new SensitiveDetector("Al");
+
+  G4SDManager::GetSDMpointer()->AddNewDetector(alSD);
+  
+  SetSensitiveDetector("cap1", alSD);
+  SetSensitiveDetector("cap2", alSD);
+  SetSensitiveDetector("sleeve", alSD);
+*/
 
 }
 

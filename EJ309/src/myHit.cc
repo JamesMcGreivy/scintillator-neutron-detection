@@ -9,23 +9,30 @@
 #include "G4Allocator.hh"
 #include "SystemOfUnits.hh"
 
-myHit::myHit(G4int trackID, G4double eDep, G4String particle)
+myHit::myHit(G4int trackID, G4double eDep, G4String particle, 
+			 G4int parentID, G4String material, G4double currKE, 
+			 G4double currTime)
 {
 	hTrackID = trackID;
 	hEdep = eDep;
 	hParticle = particle;
-	hEventNum = -1;
+	hParentID = parentID;
+	hMaterial = material;
+	hCurrKE = currKE;
+	hCurrTime = currTime;
 }
 
-myHit::~myHit()
-{
-	delete hParticle;
-}
+myHit::~myHit() { }
 
 G4String myHit::ToString() {
-	G4String str = std::to_string(hEventNum) + "," 
-				 + std::to_string(hTrackID)  + "," 
-				 + std::to_string(hEdep / eV)	 + ","
-				 + hParticle;
+	G4String str = std::to_string(hTrackID)  + "," 
+				 + std::to_string(hParentID) + ","
+				 + hParticle 				 + ","
+				 + std::to_string(hEdep)     + ","
+				 + hMaterial 				 + ","
+				 + std::to_string(hCurrKE)   + ","
+				 + std::to_string(hCurrTime);
+				 
+
 	return str;
 }

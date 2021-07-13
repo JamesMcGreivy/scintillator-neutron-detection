@@ -6,6 +6,8 @@
 #define PhysicsList_h 1
 
 #include "QGSP_BERT_HP.hh"
+#include "FTFP_BERT_HP.hh"
+#include "Shielding.hh"
 
 // Unused currently ...
 

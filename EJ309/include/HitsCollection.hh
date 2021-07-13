@@ -9,9 +9,7 @@
 class HitsCollection
 {
 
-private:	
-	static G4int eventNumber;
-
+private:
 	static std::vector<myHit*> allHits;
 
 public:
@@ -19,9 +17,7 @@ public:
 
 	static void AddHit(myHit* hit);
 
-	static void EndEvent();
-
-	static G4int GetEventNumber() { return eventNumber; };
+	static void Clear();
 
 	static void ToFile(G4String path);
 
