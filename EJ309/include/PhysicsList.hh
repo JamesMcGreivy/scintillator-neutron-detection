@@ -10,7 +10,7 @@
 #include "Shielding.hh"
 
 // Unused currently ...
-
+// Just inherits from the premade physics list QGSP_BERT_HP
 class PhysicsList: public QGSP_BERT_HP
 {
 

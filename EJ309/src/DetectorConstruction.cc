@@ -19,9 +19,8 @@
 #include "G4Element.hh"
 #include "G4Material.hh"
 #include "G4UserLimits.hh"
-#include "myHit.hh"
 
-
+// Constructor just initializes the NIST material manager
 DetectorConstruction::DetectorConstruction() 
   : G4VUserDetectorConstruction() 
 { 
@@ -30,17 +29,15 @@ DetectorConstruction::DetectorConstruction()
 
 }
 
-// Called by G4 to construct the world
+// Required by G4 to construct the world
+// Must return the world volume
 G4VPhysicalVolume* DetectorConstruction::Construct()
 {
-
   DefineMaterials();
-
   return DefineGeometry();
-
 }
 
-// Defines the materials to be used in the geometry 
+// Defines the materials to be used in the detector
 void DetectorConstruction::DefineMaterials() 
 {
 
@@ -65,7 +62,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineGeometry()
   // Check if volumes overlap
   G4bool checkOverlaps = true;
 
-  // ~~ Defines the world ~~ //
+  // ~~ Defines the world volume ~~ //
   
   G4double worldXYZ = 10*inch;
 
@@ -177,7 +174,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineGeometry()
 }
 
 
-// Constructs all sensitive detectors and assigns them to a logical volume
+// Constructs all sensitive detectors and assigns them to their logical volumes
 void DetectorConstruction::ConstructSDandField()
 {
 
@@ -186,7 +183,7 @@ void DetectorConstruction::ConstructSDandField()
   G4SDManager::GetSDMpointer()->AddNewDetector(ej309SD);
   
   SetSensitiveDetector("ej309", ej309SD);
-/*
+
   SensitiveDetector* alSD = new SensitiveDetector("Al");
 
   G4SDManager::GetSDMpointer()->AddNewDetector(alSD);
@@ -194,7 +191,7 @@ void DetectorConstruction::ConstructSDandField()
   SetSensitiveDetector("cap1", alSD);
   SetSensitiveDetector("cap2", alSD);
   SetSensitiveDetector("sleeve", alSD);
-*/
+
 
 }
 

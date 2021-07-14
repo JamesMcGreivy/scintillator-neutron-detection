@@ -3,7 +3,6 @@
 
 #include "PrimaryGeneratorAction.hh"
 
-
 #include "G4LogicalVolumeStore.hh"
 #include "G4LogicalVolume.hh"
 #include "G4Box.hh"
@@ -14,6 +13,8 @@
 #include "SystemOfUnits.hh"
 
 
+// Sets up the source which will generate
+// the particles for the simulation
 PrimaryGeneratorAction::PrimaryGeneratorAction()
 : G4VUserPrimaryGeneratorAction(),
   fParticleSource(0)
@@ -26,9 +27,9 @@ PrimaryGeneratorAction::~PrimaryGeneratorAction()
   delete fParticleSource;
 }
 
+// This gets called at the beginning of each event
 void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
-  // This gets called at the beginning of each event
   fParticleSource->SetParticlePosition(G4ThreeVector(0*inch, 0*inch, -5.0*inch));
   fParticleSource->GeneratePrimaryVertex(anEvent);
 } 

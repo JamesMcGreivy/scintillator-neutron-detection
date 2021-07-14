@@ -11,9 +11,10 @@
 class ActionInitialization : public G4VUserActionInitialization
 {
 public:
+  // Unused constructor
   ActionInitialization();
 
-  virtual void BuildForMaster() const;
+  // Used to define types of actions taken during simulation 
   virtual void Build() const;
 };
 

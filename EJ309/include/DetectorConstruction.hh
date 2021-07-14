@@ -10,11 +10,10 @@
 // Needed G4 Classes
 #include "globals.hh"
 #include "SystemOfUnits.hh"
-
-class G4VPhysicalVolume;
-class G4LogicalVolume;
-class G4NistManager;
-class G4Material;
+#include "G4VPhysicalVolume.hh";
+#include "G4LogicalVolume.hh";
+#include "G4NistManager.hh";
+#include "G4Material.hh";
 
 
 
@@ -26,20 +25,24 @@ public:
 
   DetectorConstruction();
 
+  // All the static parts of the geometry should be defined here
   virtual G4VPhysicalVolume* Construct();
-
-  virtual void ConstructSDandField();
-
+  
+  // Helper methods for Construct
   void DefineMaterials();
-
   G4VPhysicalVolume* DefineGeometry();
 
-private:
+  // All the dynamic parts of the geometry, such as magnetic fields 
+  // or sensitive detectors must be defined in here. 
+  virtual void ConstructSDandField();
 
+private:
+  // Materials used in detector
   G4Material* ej309;
   G4Material* aluminum;
   G4Material* air;
 
+  // Helpful database of premade real-world materials
   G4NistManager* nist;
 
 };
