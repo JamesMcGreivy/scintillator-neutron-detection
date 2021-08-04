@@ -20,12 +20,12 @@ int main(int argc, char *argv[])
 {
 
 	// Checks command-line args
-	if ( argc != 5 )
+	if ( argc != 5 && argc != 2 )
 	{
 		G4cout << "Please Provide Valid Command Line Args : " << G4endl;
-		G4cout << "./EJ309 [ptcl] [energy] [unit] [#]"
-		G4cout << "OR"
-		G4cout << "./EJ309 vis (for debugging)"
+		G4cout << "\t./EJ309 [ptcl] [energy] [unit] [#]" << G4endl;
+		G4cout << "\t\tOR" << G4endl;
+		G4cout << "\t./EJ309 vis (for debugging)" << G4endl;
 		return 1;
 	}
 
@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 	G4UIExecutive* ui = new G4UIExecutive(argc, argv);
 
 	// Initializes the Run. Set the number of threads accordingly.
-	UImanager->ApplyCommand("/run/numberOfThreads 1");
+	UImanager->ApplyCommand("/run/numberOfThreads 4");
 	runManager->Initialize();
 
 	// ~~ Sets up the Particle Source ~~ //
@@ -99,43 +99,34 @@ int main(int argc, char *argv[])
 	}
 
 	// ~~ Runs the simulation ~~ //
+	G4String particle = argv[1];
+    G4String energy = argv[2];
+    G4String unit = argv[3];
+    G4String number = argv[4];
 
-	// Run a simulation for each line in the file
-	// Each row in input file must be structured :
-	// ptclType  energy  unitOfEnergy  number
-    while(file >> particle)
-    {
-    	file >> energy;
-    	file >> unit;
-    	file >> number;
+    G4cout << "Particle : " << particle
+    	   << " , Energy : " << energy
+    	   << " , Unit : " << unit
+    	   << " , Number : " << number << "\n";
 
-    	G4cout << "Particle : " << particle
-    		   << " , Energy : " << energy
-    		   << " , Unit : " << unit
-    		   << " , Number : " << number << "\n";
+    // Sets the particle source according to user input
+    // Performs 500 particles per run, since multithreading
+    // only works across seperate events
+	UImanager->ApplyCommand("/gps/number 500");
+	UImanager->ApplyCommand("/gps/particle " + particle);
+	UImanager->ApplyCommand("/gps/energy " + energy + " " + unit);
 
-        // Sets the particle source according to user input
-    	// Performs 500 particles per run, since multithreading
-    	// only works across events
-		UImanager->ApplyCommand("/gps/number 500");
-		UImanager->ApplyCommand("/gps/particle " + particle);
-		UImanager->ApplyCommand("/gps/energy " + energy + " " + unit);
-
-		// Sets the path for the sensitive detector output
-		// NEED TO CALL somewhere before run because otherwise nullptr
-		SensitiveDetector::OpenFile("data/" + particle 
+	// Sets the path for the sensitive detector output
+	// NEED TO CALL somewhere before run because otherwise nullptr
+	SensitiveDetector::OpenFile("EJ309-build/data/" + particle 
 								 		+ "_" + energy 
 								 		+ "_" + unit + ".csv");
 		
-		// Runs the simulation
-		runManager->BeamOn( std::atoi(number) / 500 );
+	// Runs the simulation
+	runManager->BeamOn( std::atoi(number) / 500 );
 
-		// Properly closes the output file
-		SensitiveDetector::outputFile->close();
-
-	}
-
-	file.close();
+	// Properly closes the output file
+	SensitiveDetector::outputFile->close();
 
 	delete runManager;
 	return 0;

@@ -5,12 +5,11 @@ from scipy import interpolate
 from scipy import optimize
 import os
 import multiprocessing as mp
-import pickle
 import sys
 
 # Checks validity of command-line args
-if len(sys.argv) != 5:
-    raise Exception("Please Provide Command Line Args : \n\t [...].py [type] [energy] [unit]")
+if len(sys.argv) != 4:
+    raise Exception("Please Provide Valid Command Line Args : \n\t [...].py [type] [energy] [unit]")
 
 # Creates a "particle tree" which is a dictionary containing
 # { event0 : {ptcls} , event1 : {ptcls} , ... }
@@ -115,14 +114,14 @@ def ptclLightYield(ptcl, pRF, cRF):
 def f(x, A, B, C, D, E, F, G):
     return A*x + B*x**2 + C*x**3 + D*x**4
 
-protonLightYield = np.array(pd.read_csv("Jupyter/ProtonResponseEJ309.txt", delimiter=' ', header = None))
+protonLightYield = np.array(pd.read_csv("G4DataToLY/ProtonResponseEJ309.txt", delimiter=' ', header = None))
 xP = np.append(np.array([0]), protonLightYield[:,0])
 yP = np.append(np.array([0]), protonLightYield[:,1])
 
 poptP, pcovP = optimize.curve_fit(f, xP, yP)
 pRF = lambda x: f(x, *poptP)
 
-carbonLightYield = np.array(pd.read_csv("Jupyter/CarbonResponseEJ309.txt", delimiter=' ', header = None))
+carbonLightYield = np.array(pd.read_csv("G4DataToLY/CarbonResponseEJ309.txt", delimiter=' ', header = None))
 xC = np.append(np.array([0]), carbonLightYield[:,0])
 yC = np.append(np.array([0]), carbonLightYield[:,1])
 
@@ -152,12 +151,15 @@ filename = ptcl + "_" + energy + "_" + unit + ".csv"
 
 DATADIR = "EJ309-build/data/"
 
+bins = None
+counts = None
+
 # Bins to use for light yield histograma
 BINS = np.linspace(1e-3, 30, 51)
 
 # Generates a histogram of light yield
 lightYield = GetLightYield(DATADIR + filename)
-counts = np.array(plt.hist(lightYield, bins = BINS)[0])
+counts = plt.hist(lightYield, bins = BINS)[0]
 
 # Change the bins so that they fall at the midpoint of each range, 
 # instead of being the beginning and end points 
@@ -165,7 +167,5 @@ bins = np.zeros(len(BINS) - 1)
 for i in range(0, len(BINS) - 1):
     bins[i] = (BINS[i + 1] + BINS[i]) / 2.0
 
-bins = np.array(bins)
-
 # Save to file
-np.save("G4DataToLY/LightYields/" + ptcl + "_" + energy + "_" + unit, np.array([bins, counts]))
+np.save("G4DataToLY/LightYields/" + ptcl + energy + unit, np.array([bins, counts]))
