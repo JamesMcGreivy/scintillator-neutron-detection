@@ -18,6 +18,17 @@
 
 int main(int argc, char *argv[]) 
 {
+
+	// Checks command-line args
+	if ( argc != 5 )
+	{
+		G4cout << "Please Provide Valid Command Line Args : " << G4endl;
+		G4cout << "./EJ309 [ptcl] [energy] [unit] [#]"
+		G4cout << "OR"
+		G4cout << "./EJ309 vis (for debugging)"
+		return 1;
+	}
+
 	// If vis is passed on the command line, opens up the UI
 	// for debugging
 	bool visualize = false;
@@ -58,7 +69,7 @@ int main(int argc, char *argv[])
 	G4UIExecutive* ui = new G4UIExecutive(argc, argv);
 
 	// Initializes the Run. Set the number of threads accordingly.
-	UImanager->ApplyCommand("/run/numberOfThreads 4");
+	UImanager->ApplyCommand("/run/numberOfThreads 1");
 	runManager->Initialize();
 
 	// ~~ Sets up the Particle Source ~~ //
@@ -68,6 +79,7 @@ int main(int argc, char *argv[])
 	
 	// Sets the particle distribution to contain only the detector. 
 	// Prevents particles from being created which do not intersect the detector.
+	// This was just determined visually
 	UImanager->ApplyCommand("/gps/position 0 0 -10 cm");
 	UImanager->ApplyCommand("/gps/ang/mintheta 180 deg");
 	UImanager->ApplyCommand("/gps/ang/maxtheta 200 deg");
@@ -86,17 +98,7 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 
-	// ~~ Runs the simulations ~~ //
-
-	// The input file, containing all runs to perform
-	std::ifstream file("input.txt");
-
-	// Will read in particle type, energy, and amount
-	// from input file
-	G4String particle;
-	G4String energy;
-	G4String unit;
-	G4String number;
+	// ~~ Runs the simulation ~~ //
 
 	// Run a simulation for each line in the file
 	// Each row in input file must be structured :

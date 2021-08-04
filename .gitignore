@@ -1,3 +1,5 @@
 .DS_Store
 /EJ309-build
-/old
+.ipynb_checkpoints
+.gitignore
+*.csv
