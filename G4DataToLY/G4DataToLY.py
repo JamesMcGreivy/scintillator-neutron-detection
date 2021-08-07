@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 from scipy import interpolate
 from scipy import optimize
 import os
-import multiprocessing as mp
+from multiprocessing import Process
+import pickle
 import sys
 
 # Creates a "particle tree" which is a dictionary containing
@@ -110,14 +111,14 @@ def ptclLightYield(ptcl, pRF, cRF):
 def f(x, A, B, C, D, E, F, G):
     return A*x + B*x**2 + C*x**3 + D*x**4
 
-protonLightYield = np.array(pd.read_csv("G4DataToLY/ProtonResponseEJ309.txt", delimiter=' ', header = None))
+protonLightYield = np.array(pd.read_csv("ProtonResponseEJ309.txt", delimiter=' ', header = None))
 xP = np.append(np.array([0]), protonLightYield[:,0])
 yP = np.append(np.array([0]), protonLightYield[:,1])
 
 poptP, pcovP = optimize.curve_fit(f, xP, yP)
 pRF = lambda x: f(x, *poptP)
 
-carbonLightYield = np.array(pd.read_csv("G4DataToLY/CarbonResponseEJ309.txt", delimiter=' ', header = None))
+carbonLightYield = np.array(pd.read_csv("CarbonResponseEJ309.txt", delimiter=' ', header = None))
 xC = np.append(np.array([0]), carbonLightYield[:,0])
 yC = np.append(np.array([0]), carbonLightYield[:,1])
 
@@ -139,29 +140,31 @@ def GetLightYield(data):
             
     return np.array(lightYield)
 
-# Gets the file to be read from the command line args
-ptcl = sys.argv[1]
-energy = sys.argv[2]
-unit = sys.argv[3]
-filename = ptcl + "_" + energy + "_" + unit + ".csv"
-
-DATADIR = "EJ309-build/data/"
-
-bins = None
-counts = None
+DATADIR = "../EJ309-build/data/"
 
 # Bins to use for light yield histograma
 BINS = np.linspace(1e-3, 30, 51)
-
-# Generates a histogram of light yield
-lightYield = GetLightYield(DATADIR + filename)
-counts = plt.hist(lightYield, bins = BINS)[0]
 
 # Change the bins so that they fall at the midpoint of each range, 
 # instead of being the beginning and end points 
 bins = np.zeros(len(BINS) - 1)
 for i in range(0, len(BINS) - 1):
     bins[i] = (BINS[i + 1] + BINS[i]) / 2.0
+bins = np.array(bins)
 
-# Save to file
-np.save("G4DataToLY/LightYields/" + ptcl + energy + unit, np.array([bins, counts]))
+def getLY(data):
+    # Generates a histogram of light yield
+    lightYield = GetLightYield(DATADIR + data)
+    counts = np.array(plt.hist(lightYield, bins = BINS)[0])
+
+    # Save to file
+    np.save("LightYields/" + data, np.array([bins, counts]))
+
+if __name__ == '__main__':
+    # Multithreads each process
+    running_tasks = [Process(target = getLY, args = (data,)) for data in os.listdir(DATADIR)]
+    for running_task in running_tasks:
+        running_task.start()
+    for running_task in running_tasks:
+        running_task.join()
+
