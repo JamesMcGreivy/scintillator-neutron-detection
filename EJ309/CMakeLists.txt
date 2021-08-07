@@ -47,6 +47,7 @@ target_link_libraries(EJ309 ${Geant4_LIBRARIES})
 set(EJ309_SCRIPTS
   init_vis.mac
   vis.mac
+  input.txt
   )
 
 # Loop through all of these scripts and copy them to the new location
@@ -58,6 +59,7 @@ foreach(_script ${EJ309_SCRIPTS})
     )
 endforeach()
 
+file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/data)
 
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
 install(TARGETS EJ309 DESTINATION bin)

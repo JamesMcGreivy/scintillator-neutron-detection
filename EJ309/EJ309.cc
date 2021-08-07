@@ -20,10 +20,10 @@ int main(int argc, char *argv[])
 {
 
 	// Checks command-line args
-	if ( argc != 5 && argc != 2 )
+	if ( argc != 2 )
 	{
 		G4cout << "Please Provide Valid Command Line Args : " << G4endl;
-		G4cout << "\t./EJ309 [ptcl] [energy] [unit] [#]" << G4endl;
+		G4cout << "\t./EJ309 [# cores]" << G4endl;
 		G4cout << "\t\tOR" << G4endl;
 		G4cout << "\t./EJ309 vis (for debugging)" << G4endl;
 		return 1;
@@ -69,7 +69,11 @@ int main(int argc, char *argv[])
 	G4UIExecutive* ui = new G4UIExecutive(argc, argv);
 
 	// Initializes the Run. Set the number of threads accordingly.
-	UImanager->ApplyCommand("/run/numberOfThreads 4");
+	if ( !visualize ) 
+	{
+		UImanager->ApplyCommand("/run/numberOfThreads " + G4String(argv[1]));
+	}
+	
 	runManager->Initialize();
 
 	// ~~ Sets up the Particle Source ~~ //
@@ -99,35 +103,46 @@ int main(int argc, char *argv[])
 	}
 
 	// ~~ Runs the simulation ~~ //
-	G4String particle = argv[1];
-    G4String energy = argv[2];
-    G4String unit = argv[3];
-    G4String number = argv[4];
+	G4String particle;
+	G4String energy;
+	G4String unit;
+	G4String number;
 
-    G4cout << "Particle : " << particle
-    	   << " , Energy : " << energy
-    	   << " , Unit : " << unit
-    	   << " , Number : " << number << "\n";
+	// The input file, containing all runs to perform
+	std::ifstream file("input.txt");
 
-    // Sets the particle source according to user input
-    // Performs 500 particles per run, since multithreading
-    // only works across seperate events
-	UImanager->ApplyCommand("/gps/number 500");
-	UImanager->ApplyCommand("/gps/particle " + particle);
-	UImanager->ApplyCommand("/gps/energy " + energy + " " + unit);
+	// Run a simulation for each line in the file
+    	while(file >> particle)
+    	{
+	    	file >> energy;
+	    	file >> unit;
+	    	file >> number;
 
-	// Sets the path for the sensitive detector output
-	// NEED TO CALL somewhere before run because otherwise nullptr
-	SensitiveDetector::OpenFile("EJ309-build/data/" + particle 
-								 		+ "_" + energy 
-								 		+ "_" + unit + ".csv");
-		
-	// Runs the simulation
-	runManager->BeamOn( std::atoi(number) / 500 );
+	    	G4cout << "Particle : " << particle
+	    		   << " , Energy : " << energy
+	    		   << " , Unit : " << unit
+	    		   << " , Number : " << number << "\n";
 
-	// Properly closes the output file
-	SensitiveDetector::outputFile->close();
+	        // User input
+		UImanager->ApplyCommand("/gps/number 100");
+		UImanager->ApplyCommand("/gps/particle " + particle);
+		UImanager->ApplyCommand("/gps/energy " + energy + " " + unit);
 
+		// Sets the path for the sensitive detector output
+		// Need to call before run because otherwise nullptr
+		SensitiveDetector::OpenFile("data/" + particle 
+					 		+ "_" + energy 
+							+ "_" + unit + ".csv");
+
+		// Runs the simulation
+		runManager->BeamOn( std::atoi(number) / 100.0 );
+
+		// Properly closes the output file
+		SensitiveDetector::outputFile->close();
+
+	}
+
+	file.close();
 	delete runManager;
 	return 0;
 }

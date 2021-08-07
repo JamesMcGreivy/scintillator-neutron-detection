@@ -7,10 +7,6 @@ import os
 import multiprocessing as mp
 import sys
 
-# Checks validity of command-line args
-if len(sys.argv) != 4:
-    raise Exception("Please Provide Valid Command Line Args : \n\t [...].py [type] [energy] [unit]")
-
 # Creates a "particle tree" which is a dictionary containing
 # { event0 : {ptcls} , event1 : {ptcls} , ... }
 # "ptcls" contains:
