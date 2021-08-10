@@ -81,13 +81,13 @@ int main(int argc, char *argv[])
 	
 		runManager->Initialize();	
 		
-		SensitiveDetector::OpenFile("debug.csv");
 		UImanager->ApplyCommand("/gps/number 1");
 		UImanager->ApplyCommand("/gps/particle neutron");
 		UImanager->ApplyCommand("/gps/energy 0.2 MeV");
 		UImanager->ApplyCommand("/control/execute init_vis.mac");
 		ui->SessionStart();
 		delete runManager;
+		SensitiveDetector::DumpToFile("debug.csv");
 		return 0;
 	}
 
@@ -131,17 +131,13 @@ int main(int argc, char *argv[])
 		UImanager->ApplyCommand("/gps/particle " + particle);
 		UImanager->ApplyCommand("/gps/energy " + energy + " " + unit);
 
-		// Sets the path for the sensitive detector output
-		// Need to call before run because otherwise nullptr
-		SensitiveDetector::OpenFile("data/" + particle 
-					 		+ "_" + energy 
-							+ "_" + unit + ".csv");
-
 		// Runs the simulation
 		runManager->BeamOn(numThreadsInt);
 
-		// Properly closes the output file
-		SensitiveDetector::outputFile->close();
+		// Dump data to output file
+		SensitiveDetector::DumpToFile("data/" + particle 
+					 						  + "_" + energy 
+											  + "_" + unit + ".csv");
 
 	}
 

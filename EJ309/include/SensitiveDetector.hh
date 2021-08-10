@@ -5,6 +5,8 @@
 #define SensitiveDetector_h 1
 
 #include "G4VSensitiveDetector.hh"
+#include "HitsCollection.hh"
+#include "MyHit.hh"
 
 class G4Step;
 class G4HCofThisEvent;
@@ -26,25 +28,39 @@ public:
     // Unique identifier for each sensitive detector
     G4int sdID;
 
-    // For thread-safe writing to file
+    // Sensitive-detector specific hits collection
+    HitsCollection* hitsCollection;
+
+    // For thread-safe functions
     static std::mutex mtx;
     
     // Tracks the number of existing sensitive detectors
-    static int numberSDs;
-    
-    // For writing hits to a file
-    static std::ofstream* outputFile;
-    
-    // Sets the file for all sensitive detectors to write to
-    // and creates the column headers
-    // NOTE : This method MUST be called before using the sensitive detector
-    // beause otherwise the outputFile pointer points to nothing
-    static void OpenFile(G4String filePath)
-    {
-        outputFile = new std::ofstream(filePath, std::ofstream::out | std::ofstream::trunc);
-        (*outputFile) << "trackID,parentID,pType,eDep(eV),materialName,currKE(eV),currTime\n";
-    }
+    static G4int numberSDs;
 
+    // For storing the data from each thread's sensitive detector
+    // maps a sensitive detector ID to a hit collection
+    static std::map<G4int, HitsCollection*> sdIDtoHC;
+    
+    // Writes all sensitive detector data to a file
+    // and clears the logged data
+    static void DumpToFile(G4String filePath)
+    {
+        mtx.lock()
+        std::ofstream outputFile = std::ofstream(filePath, std::ofstream::out | std::ofstream::trunc);
+        outputFile << "trackID,parentID,pType,eDep(eV),materialName,currKE(eV),currTime\n";
+
+        for (const auto & [key, HC] : sdIDtoHC)
+        {
+            for (MyHit* hit : *HC)
+            {
+                outputFile << hit->getOutput();
+            }
+        }
+
+        sdIDtoHC.clear();
+        numberSDs = 0;
+        mtx.unlock();
+    }
 };
 
 #endif
