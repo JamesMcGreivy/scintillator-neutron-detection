@@ -49,8 +49,9 @@ public:
         std::ofstream outputFile = std::ofstream(filePath, std::ofstream::out | std::ofstream::trunc);
         outputFile << "trackID,parentID,pType,eDep(eV),materialName,currKE(eV),currTime\n";
 
-        for (const auto & [key, HC] : sdIDtoHC)
+        for (const auto& kv : sdIDtoHC)
         {
+            HitsCollection* HC = kv.second;
             for (MyHit* hit : *HC)
             {
                 outputFile << hit->getOutput();

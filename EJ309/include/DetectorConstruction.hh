@@ -10,10 +10,10 @@
 // Needed G4 Classes
 #include "globals.hh"
 #include "SystemOfUnits.hh"
-#include "G4VPhysicalVolume.hh";
-#include "G4LogicalVolume.hh";
-#include "G4NistManager.hh";
-#include "G4Material.hh";
+#include "G4VPhysicalVolume.hh"
+#include "G4LogicalVolume.hh"
+#include "G4NistManager.hh"
+#include "G4Material.hh"
 
 
 
