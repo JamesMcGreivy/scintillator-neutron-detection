@@ -69,11 +69,6 @@ int main(int argc, char *argv[])
 	G4UIExecutive* ui = new G4UIExecutive(argc, argv);
 
 	// Initializes the Run. Set the number of threads accordingly.
-	if ( !visualize ) 
-	{
-		UImanager->ApplyCommand("/run/numberOfThreads " + G4String(argv[1]));
-	}
-	
 	runManager->Initialize();
 
 	// ~~ Sets up the Particle Source ~~ //
@@ -102,6 +97,14 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 
+	// Sets number of threads
+	
+	G4int numThreadsInt = std::stoi(argv[1]);
+	G4String numThreadsString = argv[1];
+	
+	UImanager->ApplyCommand("/run/numberOfThreads " + numThreadsString);
+	
+
 	// ~~ Runs the simulation ~~ //
 	G4String particle;
 	G4String energy;
@@ -112,19 +115,21 @@ int main(int argc, char *argv[])
 	std::ifstream file("input.txt");
 
 	// Run a simulation for each line in the file
-    	while(file >> particle)
-    	{
-	    	file >> energy;
-	    	file >> unit;
-	    	file >> number;
+    while(file >> particle)
+    {
+	    file >> energy;
+	    file >> unit;
+	    file >> number;
 
-	    	G4cout << "Particle : " << particle
-	    		   << " , Energy : " << energy
-	    		   << " , Unit : " << unit
-	    		   << " , Number : " << number << "\n";
+	    G4cout 	<< "Particle : " << particle
+	    		<< " , Energy : " << energy
+	    		<< " , Unit : " << unit
+	    		<< " , Number : " << number << "\n";
 
-	        // User input
-		UImanager->ApplyCommand("/gps/number 100");
+	    G4int ptclsPerThread = std::atoi(number) / numThreadsInt;
+
+	    // User input
+		UImanager->ApplyCommand("/gps/number " + std::to_string(ptclsPerThread));
 		UImanager->ApplyCommand("/gps/particle " + particle);
 		UImanager->ApplyCommand("/gps/energy " + energy + " " + unit);
 
@@ -135,7 +140,7 @@ int main(int argc, char *argv[])
 							+ "_" + unit + ".csv");
 
 		// Runs the simulation
-		runManager->BeamOn( std::atoi(number) / 100.0 );
+		runManager->BeamOn(numThreadsInt);
 
 		// Properly closes the output file
 		SensitiveDetector::outputFile->close();
