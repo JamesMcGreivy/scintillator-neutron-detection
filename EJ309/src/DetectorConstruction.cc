@@ -184,6 +184,7 @@ void DetectorConstruction::ConstructSDandField()
   
   SetSensitiveDetector("ej309", ej309SD);
 
+  /*
   SensitiveDetector* alSD = new SensitiveDetector("Al");
 
   G4SDManager::GetSDMpointer()->AddNewDetector(alSD);
@@ -191,7 +192,7 @@ void DetectorConstruction::ConstructSDandField()
   SetSensitiveDetector("cap1", alSD);
   SetSensitiveDetector("cap2", alSD);
   SetSensitiveDetector("sleeve", alSD);
-
+  */
 
 }
 

@@ -101,6 +101,8 @@ int main(int argc, char *argv[])
 	
 	G4int numThreadsInt = std::stoi(argv[1]);
 	G4String numThreadsString = argv[1];
+
+	std::cout << "NUM THREADS : " << numThreadsString << std::endl;
 	
 	UImanager->ApplyCommand("/run/numberOfThreads " + numThreadsString);
 	

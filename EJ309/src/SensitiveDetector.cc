@@ -24,6 +24,7 @@ SensitiveDetector::~SensitiveDetector() { }
 // sensitive detectors in the world.
 void SensitiveDetector::Initialize(G4HCofThisEvent* HCE)
 {
+  G4cout << "INITIALIZE CALLED ??????" << G4endl;
   mtx.lock();
   sdID = numberSDs + 1;
   numberSDs += 1;
