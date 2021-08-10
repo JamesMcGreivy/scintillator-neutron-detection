@@ -45,7 +45,7 @@ public:
     // and clears the logged data
     static void DumpToFile(G4String filePath)
     {
-        mtx.lock()
+        mtx.lock();
         std::ofstream outputFile = std::ofstream(filePath, std::ofstream::out | std::ofstream::trunc);
         outputFile << "trackID,parentID,pType,eDep(eV),materialName,currKE(eV),currTime\n";
 
