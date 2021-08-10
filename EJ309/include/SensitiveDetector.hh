@@ -46,7 +46,7 @@ public:
     static void DumpToFile(G4String filePath)
     {
         mtx.lock();
-        std::ofstream outputFile = std::ofstream(filePath, std::ofstream::out | std::ofstream::trunc);
+        std::ofstream outputFile = std::ofstream(filePath);
         outputFile << "trackID,parentID,pType,eDep(eV),materialName,currKE(eV),currTime\n";
 
         for (const auto& kv : sdIDtoHC)
