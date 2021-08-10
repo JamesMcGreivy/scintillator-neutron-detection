@@ -39,13 +39,8 @@ int main(int argc, char *argv[])
 
 	// Constructs the run manager, checking if the G4 build
 	// is multithreaded or not.
-	#ifdef G4MULTITHREADED
 	G4MTRunManager* runManager = new G4MTRunManager;
 	G4cout << "Multithreaded" << G4endl;
-	#else
-	G4RunManager* runManager = new G4RunManager;
-	G4cout << "Single threaded" << G4endl;
-	#endif
 
 	// Gets the pointer to the UI manager
 	G4UImanager* UImanager = G4UImanager::GetUIpointer();
@@ -65,9 +60,6 @@ int main(int argc, char *argv[])
 	G4VisManager* visManager = new G4VisExecutive();
 	visManager->Initialize();
 
-	// Initializes the Run. Set the number of threads accordingly.
-	runManager->Initialize();
-
 	// ~~ Sets up the Particle Source ~~ //
 
 	// Isometric distribution, i.e. any angle is equally probable
@@ -86,6 +78,8 @@ int main(int argc, char *argv[])
 	{
 		// Constructs the ui
 		G4UIExecutive* ui = new G4UIExecutive(argc, argv);
+	
+		runManager->Initialize();	
 		
 		SensitiveDetector::OpenFile("debug.csv");
 		UImanager->ApplyCommand("/gps/number 1");
@@ -106,6 +100,8 @@ int main(int argc, char *argv[])
 	
 	UImanager->ApplyCommand("/run/numberOfThreads " + numThreadsString);
 	
+	// Initializes the Run. Set the number of threads accordingly.
+	runManager->Initialize();
 
 	// ~~ Runs the simulation ~~ //
 	G4String particle;
