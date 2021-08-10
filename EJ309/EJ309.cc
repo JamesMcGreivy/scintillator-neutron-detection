@@ -65,9 +65,6 @@ int main(int argc, char *argv[])
 	G4VisManager* visManager = new G4VisExecutive();
 	visManager->Initialize();
 
-	// Constructs the ui
-	G4UIExecutive* ui = new G4UIExecutive(argc, argv);
-
 	// Initializes the Run. Set the number of threads accordingly.
 	runManager->Initialize();
 
@@ -87,6 +84,9 @@ int main(int argc, char *argv[])
 	// For visualization, debugging
 	if (visualize)
 	{
+		// Constructs the ui
+		G4UIExecutive* ui = new G4UIExecutive(argc, argv);
+		
 		SensitiveDetector::OpenFile("debug.csv");
 		UImanager->ApplyCommand("/gps/number 1");
 		UImanager->ApplyCommand("/gps/particle neutron");
