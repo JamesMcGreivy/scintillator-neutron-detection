@@ -19,8 +19,7 @@ MyHit::MyHit(G4Step* step, G4int sdIDint)
 	
 	// Formats for output string
 	output = sdID 	+ "-" + trackID  + "," + sdID + "-" + parentID + ","
-                  	+ particle + "," + eDep + "," + material + ","
-                  	+ currKE + "," + currTime + "\n";
+                  	+ particle + "," + eDep + "," + material + "\n";
 }
 
 MyHit::~MyHit()

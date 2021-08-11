@@ -48,7 +48,7 @@ public:
         mtx.lock();
         std::ofstream outputFile;
         outputFile.open(filePath, std::ofstream::out | std::ofstream::trunc);
-        outputFile << "trackID,parentID,pType,eDep(eV),materialName,currKE(eV),currTime\n";
+        outputFile << "trackID,parentID,pType,eDep(eV),materialName\n";
 
         for (const auto& kv : sdIDtoHC)
         {

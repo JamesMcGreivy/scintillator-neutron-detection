@@ -162,9 +162,25 @@ def getLY(data):
 
 if __name__ == '__main__':
     # Multithreads each process
-    running_tasks = [Process(target = getLY, args = (data,)) for data in os.listdir(DATADIR)]
+    ALLDATA = os.listdir(DATADIR)
+
+    TEMPDATA = []
+    for dat in ALLDATA:
+
+        if len(TEMPDATA) < 60:
+            TEMPDATA.append(dat)
+
+        else:
+            running_tasks = [Process(target = getLY, args = (data,)) for data in TEMPDATA]
+            for running_task in running_tasks:
+                running_task.start()
+            for running_task in running_tasks:
+                running_task.join()
+            TEMPDATA = []
+            print(" OK" )
+
+    running_tasks = [Process(target = getLY, args = (data,)) for data in TEMPDATA]
     for running_task in running_tasks:
         running_task.start()
     for running_task in running_tasks:
         running_task.join()
-

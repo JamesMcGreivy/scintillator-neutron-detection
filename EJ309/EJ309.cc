@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 {
 
 	// Checks command-line args
-	if ( argc != 2 )
+	if ( argc != 2 && argc != 3 )
 	{
 		G4cout << "Please Provide Valid Command Line Args : " << G4endl;
 		G4cout << "\t./EJ309 [# cores]" << G4endl;
@@ -110,7 +110,8 @@ int main(int argc, char *argv[])
 	G4String number;
 
 	// The input file, containing all runs to perform
-	std::ifstream file("input.txt");
+	G4String inputFile = argv[2];
+	std::ifstream file(inputFile);
 
 	// Run a simulation for each line in the file
     while(file >> particle)
