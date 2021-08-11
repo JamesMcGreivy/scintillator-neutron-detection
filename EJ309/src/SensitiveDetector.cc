@@ -19,7 +19,7 @@ G4int SensitiveDetector::numberSDs = 0;
 SensitiveDetector::SensitiveDetector(const G4String& name)
   : G4VSensitiveDetector(name) { }
 
-SensitiveDetector::~SensitiveDetector() { }
+SensitiveDetector::~SensitiveDetector() { delete hitsCollection; }
 
 // Updates the sensitive detector ID, as well as the number of
 // sensitive detectors in the world.
