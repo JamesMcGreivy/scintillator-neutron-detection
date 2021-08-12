@@ -8,5 +8,5 @@
 cd /usr/workspace/mcgreivy/Scintillator-Neutron-Detection/EJ309-build
 source /g/g15/mcgreivy/NSSCResearch/geant4-install/bin/geant4.sh;
 echo "START";
-./EJ309 120 input1.txt;
+./EJ309 120 ../scripts/input1.txt;
 echo "DONE";
