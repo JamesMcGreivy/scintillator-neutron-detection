@@ -16,7 +16,6 @@ class SensitiveDetector : public G4VSensitiveDetector
 
 public:
 	SensitiveDetector(const G4String& name);
-    ~SensitiveDetector();
 
     // Called at the end of every event
     virtual void EndOfEvent(G4HCofThisEvent* HCE);
@@ -58,6 +57,7 @@ public:
                 outputFile << hit->getOutput();
             }
         }
+
 
         sdIDtoHC.clear();
         numberSDs = 0;

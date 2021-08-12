@@ -19,8 +19,6 @@ G4int SensitiveDetector::numberSDs = 0;
 SensitiveDetector::SensitiveDetector(const G4String& name)
   : G4VSensitiveDetector(name) { }
 
-SensitiveDetector::~SensitiveDetector() { delete hitsCollection; }
-
 // Updates the sensitive detector ID, as well as the number of
 // sensitive detectors in the world.
 void SensitiveDetector::Initialize(G4HCofThisEvent* HCE)
@@ -37,7 +35,9 @@ void SensitiveDetector::Initialize(G4HCofThisEvent* HCE)
 // debugging. If sdID = -1 in the output, there is an issue.
 void SensitiveDetector::EndOfEvent(G4HCofThisEvent* HCE)
 {
+  mtx.lock();
   sdID = -1;
+  mtx.unlock();
 }
 
 // Called every single time a hit occurs within this volume.

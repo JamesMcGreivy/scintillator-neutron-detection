@@ -113,6 +113,9 @@ int main(int argc, char *argv[])
 	G4String inputFile = argv[2];
 	std::ifstream file(inputFile);
 
+	// make a mutex for thread-safe file dumping
+	std::mutex mtx;
+
 	// Run a simulation for each line in the file
     while(file >> particle)
     {
@@ -136,10 +139,11 @@ int main(int argc, char *argv[])
 		runManager->BeamOn(numThreadsInt);
 
 		// Dump data to output file
+		mtx.lock();
 		SensitiveDetector::DumpToFile("data/" + particle 
 					 						  + "_" + energy 
 											  + "_" + unit + ".csv");
-
+		mtx.unlock();
 	}
 
 	file.close();
