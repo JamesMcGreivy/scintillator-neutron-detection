@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	if ( argc != 2 && argc != 3 )
 	{
 		G4cout << "Please Provide Valid Command Line Args : " << G4endl;
-		G4cout << "\t./EJ309 [# cores]" << G4endl;
+		G4cout << "\t./EJ309 [# cores] [input file dir]" << G4endl;
 		G4cout << "\t\tOR" << G4endl;
 		G4cout << "\t./EJ309 vis (for debugging)" << G4endl;
 		return 1;
