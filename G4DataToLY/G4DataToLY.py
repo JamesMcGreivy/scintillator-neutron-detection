@@ -80,7 +80,16 @@ def hasNoChildrenOfType(ptclInTree, ptclType):
         hasChild = hasChild and hasNoChildrenOfType(child, ptclType)
     
     return hasChild
-        
+
+# Equation for Pulse Height uncertainty as a function of LY (From Dietz et Al.)
+A = 0.113
+B = 0.065
+G = 0.060
+def FWHM(L):
+    if L == 0:
+        return 0
+    return L * ( ( A**2 + ( ( B**2 ) / L ) + ( ( G**2 ) / ( L**2 ) ) )**0.5 )
+
 # Takes in a particle and finds the light generated in the scintillator 
 # by the particle, or any of its children. 
 # -> pRF is the "proton response function" which takes total energy deposited by a proton and 
@@ -100,8 +109,21 @@ def ptclLightYield(ptcl, pRF, cRF):
         if ptclType in "C12 C13":
             cEDep += event[3]
         
+    # Get LY from Edep (convert from eV to MeV)
+    pLY = pRF( pEDep / 1e6 )
+    cLY = cRF( cEDep / 1e6 )
+    # Now pLY contains the light yield from this particular proton or carbon, 
+    # in units relative to a 477-keV e-
+    # Must convert into MeVee to use function, then convert back
+    sigma = FWHM(pLY * ( 477 / 1000 ) ) * ( 1000 / 477 ) / 2.355
+    uncertainty = np.random.normal(0, sigma)
+    pLY += uncertainty
+
+    sigma = FWHM(cLY * ( 477 / 1000 ) ) * ( 1000 / 477 ) / 2.355
+    uncertainty = np.random.normal(0, sigma)
+    cLY += uncertainty
     
-    lightYield = float( pRF( pEDep / 1e6 ) + cRF( cEDep / 1e6 ) )
+    lightYield = float( pLY + cLY )
     for child in ptcl["children"].values():
         lightYield += ptclLightYield(child, pRF, cRF)
     
@@ -115,16 +137,19 @@ protonLightYield = np.array(pd.read_csv("ProtonResponseEJ309.txt", delimiter=' '
 xP = np.append(np.array([0]), protonLightYield[:,0])
 yP = np.append(np.array([0]), protonLightYield[:,1])
 
-poptP, pcovP = optimize.curve_fit(f, xP, yP)
-pRF = lambda x: f(x, *poptP)
+#poptP, pcovP = optimize.curve_fit(f, xP, yP)
+#pRF = lambda x: f(x, *poptP)
+
+pRF = interpolate.interp1d(xP, yP, fill_value='extrapolate')
 
 carbonLightYield = np.array(pd.read_csv("CarbonResponseEJ309.txt", delimiter=' ', header = None))
 xC = np.append(np.array([0]), carbonLightYield[:,0])
 yC = np.append(np.array([0]), carbonLightYield[:,1])
 
-poptC, pcovC = optimize.curve_fit(f, xC, yC)
-cRF = lambda x : f(x, *poptC)
+#poptC, pcovC = optimize.curve_fit(f, xC, yC)
+#cRF = lambda x : f(x, *poptC)
 
+cRF = interpolate.interp1d(xC, yC, fill_value='extrapolate')
 
 # Gets an array of all primary particle light yields
 # from raw path to data file
@@ -143,7 +168,7 @@ def GetLightYield(data):
 DATADIR = "../EJ309-build/data/"
 
 # Bins to use for light yield histograma
-BINS = np.linspace(1e-3, 30, 51)
+BINS = np.linspace(0.3, 30, 51)
 
 # Change the bins so that they fall at the midpoint of each range, 
 # instead of being the beginning and end points 
@@ -152,35 +177,57 @@ for i in range(0, len(BINS) - 1):
     bins[i] = (BINS[i + 1] + BINS[i]) / 2.0
 bins = np.array(bins)
 
+OUTPUTDIR = "LY/"
+
 def getLY(data):
+    if data + ".npy" in os.listdir(OUTPUTDIR):
+        return
     # Generates a histogram of light yield
     lightYield = GetLightYield(DATADIR + data)
-    counts = np.array(plt.hist(lightYield, bins = BINS)[0])
+    #counts = np.array(plt.hist(lightYield, bins = BINS)[0])
 
     # Save to file
-    np.save("LightYields/" + data, np.array([bins, counts]))
+    np.save(OUTPUTDIR + data, np.array(lightYield))
 
 if __name__ == '__main__':
     # Multithreads each process
     ALLDATA = os.listdir(DATADIR)
 
+    print(len(ALLDATA), " spectra to process")
+
+    # This for loop just ensures that less than NUMCORES processes
+    # are running at a time. There was probably a better way to do this.
+    NUMCORES = 100
+
     TEMPDATA = []
+    i = 0
     for dat in ALLDATA:
 
-        if len(TEMPDATA) < 60:
+        if len(TEMPDATA) < NUMCORES:
             TEMPDATA.append(dat)
 
         else:
-            running_tasks = [Process(target = getLY, args = (data,)) for data in TEMPDATA]
+            running_tasks = [Process(target = getLY, args = (data_,)) for data_ in TEMPDATA]
             for running_task in running_tasks:
                 running_task.start()
             for running_task in running_tasks:
                 running_task.join()
+                i += 1
+                print(i, " of ", len(ALLDATA))
+
             TEMPDATA = []
+            TEMPDATA.append(dat)
             print(" OK" )
 
-    running_tasks = [Process(target = getLY, args = (data,)) for data in TEMPDATA]
+    running_tasks = [Process(target = getLY, args = (data_,)) for data_ in TEMPDATA]
     for running_task in running_tasks:
         running_task.start()
     for running_task in running_tasks:
         running_task.join()
+        i += 1
+        print(i, " of ", len(ALLDATA))
+            
+    TEMPDATA = []
+    print(" OK" )
+
+    print(TEMPDATA)
