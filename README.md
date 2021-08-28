@@ -70,7 +70,9 @@ As a summary:
 
 ## Getting Training Data for the Neural Network
 
-The code is written to be modular, and so the specifics of the number of output or input neurons can be changed very easily, as well as the minimum and maximum detector response cutoff. For my testing I used an input layer of 50 neurons, an output layer of 100 neurons, a minimum detector response cutoff of 0.3 477-keVee and a maximum detector response cutoff of 30 477-keVee. The data which the neural network is trained on takes the form:
+The code is written to be modular, and so the specifics of the number of output or input neurons can be changed very easily, as well as the minimum and maximum detector response cutoff. For my testing I used an input layer of 50 neurons, an output layer of 100 neurons, a minimum detector response cutoff of 0.3 477-keVee, and a maximum detector response cutoff of 30 477-keVee. 
+
+The data which the neural network is trained on takes the form:
 
 -> x-data: The detector response from a neutron source with a given energy spectra (from the y-data), in the range of 0.3 477-keVee to 30 477-keVee, normalized so the integral over this range is one. 50 evenly spaced points are taken in this range and used as the input data.
     
