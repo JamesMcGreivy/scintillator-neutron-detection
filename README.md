@@ -7,6 +7,7 @@ This project uses cmake in order to compile the Geant4 simulation:
     $ cmake ../EJ309
     $ make
 
+
 In order to run simulations, create an input .txt file with the following structure:
 
     [ ptcl type ] [ energy ] [ unit ] [ # of ptcls ]
