@@ -94,7 +94,4 @@ def GaussianSpectra(num, yDim, bins_LY, energy_to_LY, THREADS=4):
     
     while not queue.empty():
         xRow, yRow = queue.get()
-        x = np.vstack( (x, xRow) )
-        y = np.vstack( (y, yRow) )
-   
-    return x, y
+        x = np.vstack( (x, 
