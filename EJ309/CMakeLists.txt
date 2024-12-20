@@ -1,4 +1,3 @@
-
 # Author -- James McGreivy
 # Date -- June 26th 2021
 
@@ -12,7 +11,7 @@ project(EJ309)
 
 # Finds Geant4 package, activating all available UI and Vis drivers
 
-set(Geant4_DIR /Users/jamesmcgreivy/Geant4/)
+set(Geant4_DIR /Users/jamesmcgreivy/geant4)
 find_package(Geant4 REQUIRED ui_all vis_all)
 
 
@@ -47,7 +46,7 @@ target_link_libraries(EJ309 ${Geant4_LIBRARIES})
 set(EJ309_SCRIPTS
   init_vis.mac
   vis.mac
-  input.txt
+  example_input.txt
   )
 
 # Loop through all of these scripts and copy them to the new location
