@@ -22,5 +22,4 @@ def get_model(inputDim, outputDim, numNeurons0, numNeurons1, numNeurons2, alpha0
         model.add(Dropout(dropout))
         model.add(Dense(numNeurons2, activation=keras.layers.LeakyReLU(negative_slope = alpha2)))
         
-    model.add(Dense(outputDim, activation="relu"))
-    return model
+    model.add(Dense(outputDim,
