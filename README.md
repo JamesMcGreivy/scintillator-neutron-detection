@@ -2,15 +2,15 @@
 
 This research leverages machine learning to unfold neutron energy spectra from EJ-309 organic scintillator detector responses. Accurate neutron energy spectrum measurements are critical for applications such as radiation monitoring, medical imaging, nuclear fusion / fission tracking, and detecting illicit nuclear materials. Below is a demonstration of the unfolding neural network, trained only on Monte Carlo simulated detector responses, applied to the unfolding of two real world detector responses. These detector responses were obtained from measurements made of AmBe241 and Cf252 sources. The known neutron energy spectra are plotted below:
 
-<img width="400" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/Spectra.png?timestamp=20241219">
+<img width="400" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/Spectra.png">
 
 The experimentally determined detector responses are compared to the Monte Carlo simulated detector responses below:
 
-<img width="280" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/AmBeResponse.png?timestamp=20241219"><img width="280" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/CFResponse.png?timestamp=20241219">
+<img width="280" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/AmBeResponse.png"><img width="280" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/CFResponse.png">
 
 The accuracy of the neutron spectrum unfolding neural network on real-world experimental detector response data is demonstrated below:
 
-<img width="300" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/AmBeUnfolded.png?timestamp=20241219"><img width="300" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/CFUnfolded.png?timestamp=20241219">
+<img width="300" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/AmBeUnfolded.png"><img width="300" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/CFUnfolded.png">
 
 ## 1 - Compiling and Running Monte Carlo Simulations
 
