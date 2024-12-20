@@ -6,11 +6,11 @@ This research leverages machine learning to unfold neutron energy spectra from E
 
 The experimentally determined detector responses are compared to the Monte Carlo simulated detector responses below:
 
-<img width="200" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/AmBeResponse.png"><img width="200" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/CFResponse.png">
+<img width="300" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/AmBeResponse.png"><img width="300" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/CFResponse.png">
 
 The accuracy of the neutron spectrum unfolding neural network on real-world experimental detector response data is demonstrated below:
 
-<img width="200" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/AmBeUnfolded.png"><img width="200" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/CFUnfolded.png">
+<img width="300" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/AmBeUnfolded.png"><img width="300" alt="spectra" src="https://github.com/JamesMcGreivy/neutron-scintillator-simulation/blob/master/unfolding-neural-network/plots/CFUnfolded.png">
 
 ## 1 - Compiling and Running Monte Carlo Simulations
 
